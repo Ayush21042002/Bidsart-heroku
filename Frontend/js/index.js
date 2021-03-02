@@ -97,12 +97,9 @@ else{
       newDiv.appendChild(newA3);
       bigDiv.appendChild(newDiv);
 }
-}
-
-if(page==="index.html"){
   var slideIndex = 1;
   showSlides(slideIndex);
-}
+
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
