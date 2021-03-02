@@ -41,7 +41,7 @@ exports.addProduct = (req,resp) => {
     let images = [];
 
     for(let i=0;i<count;i++){
-      let imageURI = url + "/images/" + req.files[i].filename;
+      let imageURI = url + "images/" + req.files[i].filename;
       let image = [productId,imageURI];
       images.push(image);
     }
