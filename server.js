@@ -38,7 +38,7 @@ const server = http.createServer(app);
 require("./chat")(server);
 
 // whatever is in the environment variable PORT, or 3000 if there's nothing there.
-const port = process.env.port || 3000; 
+const port = process.env.PORT || 3000; 
 
 // server is listening on port process.env.port or 3000
 con.connect(function (err) {
