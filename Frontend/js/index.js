@@ -98,8 +98,11 @@ else{
       bigDiv.appendChild(newDiv);
 }
 }
-var slideIndex = 1;
-showSlides(slideIndex);
+
+if(page==="index.html"){
+  var slideIndex = 1;
+  showSlides(slideIndex);
+}
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
