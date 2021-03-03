@@ -46,7 +46,7 @@ async function catchJson(){
 
 catchJson().catch(error=>{
     console.log('error!');
-    console.error(error);
+    // console.error(error);
 });
 ///ADD PRODUCT
 function addProduct(imgURL,title,id,type){
@@ -131,7 +131,7 @@ function addProduct(imgURL,title,id,type){
     btn3.innerHTML = "EDIT PRODUCT DETAILS";
     div2.appendChild(btn3);
     newDiv.appendChild(div2);
-    console.log('.product-row-' + type);
+    // console.log('.product-row-' + type);
     let x=document.querySelector('.product-row-' + type);
     x.appendChild(newDiv);
 } 
@@ -147,7 +147,7 @@ scheduleForm.onsubmit = async(event) => {
 
     var startTime = document.getElementById("startTime").value;
 
-    console.log(startTime);
+    // console.log(startTime);
     
     var token = localStorage.getItem("token");
 

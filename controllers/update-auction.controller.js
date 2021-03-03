@@ -9,7 +9,7 @@ exports.updateAuction = (req,res) => {
             (err,result) => {
                 if(err) throw err;
 
-                console.log(result);
+                // console.log(result);
 
                 res.status(201).json({
                     message: "Successfully updated"

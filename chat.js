@@ -41,22 +41,22 @@ module.exports = (server) => {
                 if(timeleftArray[aid] <= 0){
                     clearInterval(downloadTimer);
                 }
-                console.log(timeleftArray[aid]);
+                // console.log(timeleftArray[aid]);
                 io.to(aid).emit('counter', {
                     timeleft: timeleftArray[aid]
                 });
                 timeleftArray[aid] -= 1;
             }, 1000);
 
-            console.log("USER WITH "+ cid + " " + username + " JOINING " + aid," 22");
+            // console.log("USER WITH "+ cid + " " + username + " JOINING " + aid," 22");
             userJoin(socket.id,cid,username,aid)
             .then(user => {
-                console.log(user," JOINED 25");
+                // console.log(user," JOINED 25");
                 timeleftArray[aid] = 60;
                 getWinningUser(aid)
                 .then(winningUser => {
-                    console.log("CURRENT WINNER ",winningUser," 28");
-                    console.log(user.aid," 29");
+                    // console.log("CURRENT WINNER ",winningUser," 28");
+                    // console.log(user.aid," 29");
                     socket.join(user.aid);
 
                     socket.emit('message', formatMessage(auctionHead, 'WELCOME TO AUCTION', winningUser));
@@ -68,7 +68,7 @@ module.exports = (server) => {
 
                     getRoomUsers(user.aid)
                     .then(userInRoom => {
-                        console.log("USERS IN ROOM ",userInRoom," 41");
+                        // console.log("USERS IN ROOM ",userInRoom," 41");
                         // console.log(room)
                         io.to(user.aid).emit('roomUsers', {
                             aid: user.aid,
@@ -89,7 +89,7 @@ module.exports = (server) => {
         socket.on('chatMessage', (message) => {
             getCurrentUser(socket.id)
             .then(user => {
-                console.log(user," in ",user.aid," sent ",message," 62");
+                // console.log(user," in ",user.aid," sent ",message," 62");
 
                 updateBid(socket.id, message,user.aid)
                 .then(data => {
@@ -99,7 +99,7 @@ module.exports = (server) => {
                     });
                     getWinningUser(user.aid)
                     .then(winningUser => {
-                            console.log("WINNER AFTER MESSAGE ",winningUser," 68");
+                            // console.log("WINNER AFTER MESSAGE ",winningUser," 68");
                             io.to(user.aid).emit('message', formatMessage(user.username,message,winningUser));
                         }).catch(err => {
                             console.log(err," 71");
@@ -115,10 +115,10 @@ module.exports = (server) => {
         socket.on('disconnect', async() => {
             getCurrentUser(socket.id)
             .then(user => {
-                console.log("USER BEING DELETED ",user," 84");
+                // console.log("USER BEING DELETED ",user," 84");
                 userLeave(socket.id)
                 .then(userDeleted => {
-                    console.log(user," USER LEFT"," 87");
+                    // console.log(user," USER LEFT"," 87");
 
                     getWinningUser(user.aid)
                     .then(winningUser => {

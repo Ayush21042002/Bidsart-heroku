@@ -101,7 +101,7 @@ exports.successHandler = (req,res) => {
                 console.log(error.response);
                 throw error;
             } else {
-                console.log(JSON.stringify(payment));
+                // console.log(JSON.stringify(payment));
                 let query1 = "SELECT s.*,p.title from seller s inner join product p on p.sid = s.sid inner join auction a on a.pid = p.pid and a.aid = ?;";
                 let query2 = "SELECT * FROM customer where cid = ?;";
                 con.query(query1 + query2,[aid,cid],(err,result) => {

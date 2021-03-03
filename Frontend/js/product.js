@@ -8,9 +8,9 @@ async function loadproduct(){
     });
     let respText = await response.json();
     productSid = respText.sid;
-    console.log("running");
+    // console.log("running");
     checkLogin();
-    console.log("running");
+    // console.log("running");
     setimages(respText);
     settext(respText);
     loadauctions(respText);
@@ -27,7 +27,7 @@ async function loadauctions(respText){
 
 loadproduct().catch(error=>{
     console.log('error!');
-    console.error(error);
+    // console.error(error);
 });
 
 function setimages(pathlink){
@@ -188,18 +188,18 @@ document.getElementById("schedule-form").onsubmit = async(event) => {
     event.preventDefault();
 
     var aid = document.getElementById("aid").value;
-    console.log(aid,"aid");
+    // console.log(aid,"aid");
     var minBid = document.getElementById("minBid").value;
-    console.log(minBid,"minBid");
+    // console.log(minBid,"minBid");
     var startTime = document.getElementById("startTime").value;
-    console.log(startTime,"start");
+    // console.log(startTime,"start");
     var token = localStorage.getItem("token");
-    console.log(token,token);
+    // console.log(token,token);
     var sid = localStorage.getItem("sid");
-    console.log(sid,"sid");
+    // console.log(sid,"sid");
     if(aid && minBid && startTime && sid && token){
 
-        console.log("ACTION");
+        // console.log("ACTION");
 
         const response = await fetch("/product/updateAuction/" + aid, {
             method: "PUT",

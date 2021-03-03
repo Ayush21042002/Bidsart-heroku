@@ -33,7 +33,7 @@ async function fetchProduct() {
 createForm.onsubmit = async(event) => {
     event.preventDefault();
 
-    console.log("HELLO");
+    // console.log("HELLO");
 
     
     // console.log(formData.get("sid"));
@@ -64,7 +64,7 @@ createForm.onsubmit = async(event) => {
 
           let result = await response.json();
 
-          console.log(result);
+          // console.log(result);
 
           if(response.status == 201){
               alert(result.message);
@@ -87,7 +87,7 @@ createForm.onsubmit = async(event) => {
 
           let result = await response.json();
 
-          console.log(result);
+          // console.log(result);
 
           if(response.status == 201){
               alert(result.message);

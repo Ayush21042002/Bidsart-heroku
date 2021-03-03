@@ -18,7 +18,7 @@ async function fetchOrders(){
         // console.log(json);
 
         const orders = json.orders;
-        console.log(orders);
+        // console.log(orders);
         
         for(let i=0;i<orders.length;i++){
             addProduct(orders[i].imageURI,orders[i].title,
@@ -108,12 +108,12 @@ function addProduct(imgURL,title,pid,Orderid,amount,paid,invoice){
 
                 const json = await response.json();
 
-                console.log(json.redirect);
+                // console.log(json.redirect);
                 window.open(json.redirect, '_blank');
             }
 
-            console.log("PAYING NOW !!!!!!!!!!!");
-            console.log("FOR ORDERID ",Orderid);
+            // console.log("PAYING NOW !!!!!!!!!!!");
+            // console.log("FOR ORDERID ",Orderid);
         };
         p.appendChild(payBtn);    
     }else{

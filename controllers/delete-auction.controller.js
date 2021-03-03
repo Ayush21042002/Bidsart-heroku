@@ -11,7 +11,7 @@ exports.deleteAuctionByAuctionId = (req,res) => {
             con.query("DELETE FROM auction WHERE aid = ? and status = 'scheduled' ",[auctionId],(err,result) => {
                 if(err) throw err;
 
-                console.log(result);
+                // console.log(result);
 
                 res.status(200).json({
                     message: "Successfully deleted"

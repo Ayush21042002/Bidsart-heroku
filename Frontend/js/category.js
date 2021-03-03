@@ -56,7 +56,7 @@ async function catchJson(){
 
 catchJson().catch(error=>{
     console.log('error!');
-    console.error(error);
+   //  console.error(error);
 });
 ///ADD PRODUCT
 function addProduct(imgURL,title,id){

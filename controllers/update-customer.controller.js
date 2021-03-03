@@ -33,7 +33,7 @@ exports.updateCustomer = (req , res)  => {
         {
             if(err) throw err;
                
-           console.log(result);
+        //    console.log(result);
            res.status(200).json({message:"Details updated successfully"});
         
         })

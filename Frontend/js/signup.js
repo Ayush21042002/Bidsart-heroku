@@ -457,7 +457,7 @@ function allLetter(inputtxt)
 form1.addEventListener('submit', async function(e) {
 	e.preventDefault();
 	if(checkInputs1()==false){
-		console.log("wrong");
+		// console.log("wrong");
 	}
 	else{
 		if(type==="customer"){
@@ -516,7 +516,7 @@ form1.addEventListener('submit', async function(e) {
 				bank_name: document.getElementById('bankName').value
 			};
 
-			console.log("seller",seller);
+			// console.log("seller",seller);
 
 			const response  = await fetch("/seller/signup",{
 				method:"POST",

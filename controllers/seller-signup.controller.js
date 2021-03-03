@@ -27,7 +27,7 @@ exports.createSeller = (req, resp) => {
         if(err) throw err;
 
         if(userResult.length > 0){
-            console.log(userResult);
+            // console.log(userResult);
             const userId = userResult[0].uid;
             con.query("UPDATE user set password = ? where uid = ?",[user.password,userId],(err,updateResult) => {
                 if(err) throw err;

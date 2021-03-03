@@ -35,7 +35,7 @@ form.onsubmit = async(event) => {
 
     const json = await response.json();
 
-    console.log(json);
+    // console.log(json);
 
     if(userType == "seller"){
         if(response.status == 200){

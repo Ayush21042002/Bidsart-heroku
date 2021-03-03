@@ -99,7 +99,7 @@ function updateBid(id, Bid,aid) {
                         throw err;
                     }
 
-                    console.log(maxBid," curr max bid");
+                    // console.log(maxBid," curr max bid");
 
                     con.query("UPDATE auct_log set isWinner = 1 where id = ?; UPDATE auct_log set isWinner = 0 where id <> ? AND aid = ?;",
                     [maxBid[0].id,maxBid[0].id,aid], 

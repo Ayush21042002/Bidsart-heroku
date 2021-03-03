@@ -2,7 +2,7 @@ const con = require("../database/db");
 
 exports.placeOrder = (req,res) => {
 
-    console.log(req.body);
+    // console.log(req.body);
 
     const cid = req.customerData.cid;
     const aid = req.body.aid;
